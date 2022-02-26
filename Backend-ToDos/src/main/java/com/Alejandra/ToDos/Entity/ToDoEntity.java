@@ -6,21 +6,12 @@ import javax.persistence.*;
 public class ToDoEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue()
     private long id;
 
     private String name;
     private boolean Completed;
     private long listID;
-
-    public ToDoEntity() {
-    }
-
-    public ToDoEntity(String name, boolean completed, long listID) {
-        this.name = name;
-        this.Completed = completed;
-        this.listID = listID;
-    }
 
     public Long getListID() {
         return listID;

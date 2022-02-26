@@ -7,6 +7,7 @@ import com.Alejandra.ToDos.Model.ToDoModel;
 import com.Alejandra.ToDos.Service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,26 +28,26 @@ public class ToDoController {
 
     //Crear una lista
     @PostMapping(path = "/list")
-    public void save(@RequestBody ListEntity list){
-        toDoService.saveList(list);
+    public ResponseEntity<String> save(@RequestBody ListEntity list){
+        return toDoService.saveList(list);
     }
 
 
     //Crear un todo dependiendo del id de la lista
     @PostMapping(path = "/todo/{listId}")
-    public ToDoModel save(@RequestBody ToDoEntity todo , @PathVariable("listId") Long ListId){
+    public ResponseEntity<String> save(@RequestBody ToDoEntity todo , @PathVariable("listId") Long ListId) throws Exception {
         return toDoService.save(todo, ListId );
     }
 
     //me trae todos los ToDos de la base de datos segun el listId
     @GetMapping(value = "/list/todos/{listId}")
-    public List<ToDoEntity> list(@PathVariable("listId") Long listId){
+    public List<ToDoModel> list(@PathVariable("listId") Long listId){
         return toDoService.list(listId);
     }
 
     //traer todas las listas creadas
     @GetMapping(value = "/list")
-    public List<ListEntity> listAll(){
+    public List<ListModel> listAll(){
         return toDoService.listAll();
     }
 

@@ -1,6 +1,5 @@
 package com.Alejandra.ToDos.Entity;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,14 +18,7 @@ public class ListEntity {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "List_id")
-    private List<ToDoEntity> Todos = new ArrayList<ToDoEntity>();
-
-    public ListEntity() {
-    }
-
-    public ListEntity(String name) {
-        this.name = name;
-    }
+    private List<ToDoEntity> Todos = new ArrayList<>();
 
     public Long getId() {
         return id;
