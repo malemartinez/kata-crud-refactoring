@@ -1,23 +1,24 @@
+import { useContext ,useEffect } from 'react';
+import DataService from "../servicios/servicios-HTTP"
+import { Store } from './Store';
 
 
-
-const List = () => {
+const List = ({Category}) => {
   const { dispatch, state: { todo } } = useContext(Store);
   const currentList = todo.list;
 
   useEffect(() => {
-    fetch(HOST_API + "/todos")
-      .then(response => response.json())
-      .then((list) => {
-        dispatch({ type: "update-list", list })
-      })
+    DataService.get(Category)
+    .then((list) => {
+      console.log(list.data)
+        dispatch({ type: "update-list", list: list.data }) //agrega los items ed la peticion a list
+    })
   }, [dispatch]);
 
 
   const onDelete = (id) => {
-    fetch(HOST_API + "/" + id + "/todo", {
-      method: "DELETE"
-    }).then((list) => {
+    DataService.deleteToDo(id)
+    .then((list) => {
       dispatch({ type: "delete-item", id })
     })
   };
@@ -30,18 +31,13 @@ const List = () => {
     const request = {
       name: todo.name,
       id: todo.id,
-      completed: event.target.checked
+      completed: event.target.checked,
+      ListID : Category
     };
-    fetch(HOST_API + "/todo", {
-      method: "PUT",
-      body: JSON.stringify(request),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then((todo) => {
-        dispatch({ type: "update-item", item: todo });
+    DataService.updateToDo(Category,request)
+       .then((todo) => {
+         console.log(todo)
+        dispatch({ type: "update-item", item: todo.data });
       });
   };
 
@@ -71,3 +67,5 @@ const List = () => {
     </table>
   </div>
 }
+
+export default List;
