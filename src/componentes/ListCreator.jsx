@@ -37,6 +37,23 @@ const ListCreator = () => {
     
   }
 
+  //Funcion que me actualiza el nombre de la lista
+  const onEdit = (event) => {
+    event.preventDefault();
+  
+    const request = {
+      name: state.name,
+      id: item.id,
+    };
+    
+      DataService.updateList(item.id , request)
+      .then((todo) => {
+        dispatch({ type: "update-item", item: todo });
+        setState({ name: "" });
+        formRef.current.reset();
+      });
+  }
+
   return ( 
     <div>
       <form ref={formRef}>
@@ -48,7 +65,7 @@ const ListCreator = () => {
           onChange={onchange}
           />
         {!item.id && <button onClick={onAdd}>Crear</button>}
-        {/* {item.id && <button onClick={onEdit}>Actualizar</button>} */}
+        {item.id && <button onClick={onEdit}>Actualizar</button>}
         <hr />
       </form>
 
