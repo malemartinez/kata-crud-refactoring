@@ -1,3 +1,39 @@
+# Solución
+La solución del back se encuentra en la rama main de este repositorio y la solucion del front se encuentra en la rama front.
+
+
+## Demo del funcionamiento de la app
+
+![Diseño y funcionamiento de la app]( ./ToDoApp.mp4)
+
+### Explicación del back
+Breve video explicando el codigo principal del backend hecho con spring boot
+
+![Codigo backend]( ./Explicacion back.mp4)
+
+
+### Explicación del front
+Breve video explicando el codigo principal del frontend hecho con react.
+
+![Codigo frontend]( ./Explicacion front.mp4)
+
+#### issues resueltos
+
+- Resolver el diseño gráfico
+- Separar bien los elementos gráficos como componentes, store, reducer y providers.
+- La base de datos debe esta en un servidor como MySQL.
+- Aplicar reglas para no guardar elementos vácios.
+- Trabajar con un objeto de trasporte de datos o un objeto plano para representa los datos ante la API.
+
+
+
+
+
+
+
+
+
+
 # [Problema]
 
 Pueden ver los siguientes videos para poder comprender la base del código fuente dentro de este repositorio. 

@@ -45,7 +45,6 @@ public class ToDoController {
         return toDoService.update(ListId,todo);
     }
 
-
     //Elimina algun ToDo de acuerdo al id
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping(value = "/todo/{id}")
