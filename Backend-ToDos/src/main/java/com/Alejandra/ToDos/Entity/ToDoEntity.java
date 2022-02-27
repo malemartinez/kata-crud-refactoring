@@ -6,10 +6,12 @@ import javax.persistence.*;
 public class ToDoEntity {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(nullable = false)
     private String name;
+
     private boolean Completed;
     private long listID;
 
