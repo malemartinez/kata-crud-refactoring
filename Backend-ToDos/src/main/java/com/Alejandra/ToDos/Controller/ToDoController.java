@@ -26,16 +26,9 @@ public class ToDoController {
         this.toDoService = toDoService;
     }
 
-    //Crear una lista
-    @PostMapping(path = "/list")
-    public ResponseEntity<String> save(@RequestBody ListEntity list){
-        return toDoService.saveList(list);
-    }
-
-
     //Crear un todo dependiendo del id de la lista
     @PostMapping(path = "/todo/{listId}")
-    public ResponseEntity<String> save(@RequestBody ToDoEntity todo , @PathVariable("listId") Long ListId) throws Exception {
+    public ResponseEntity<ToDoModel> save(@RequestBody ToDoEntity todo , @PathVariable("listId") Long ListId) throws Exception {
         return toDoService.save(todo, ListId );
     }
 
@@ -45,13 +38,6 @@ public class ToDoController {
         return toDoService.list(listId);
     }
 
-    //traer todas las listas creadas
-    @GetMapping(value = "/list")
-    public List<ListModel> listAll(){
-        return toDoService.listAll();
-    }
-
-
 
     //Actualiza el ToDo gracias al id de la lista
     @PutMapping(path = "/todo/{listId}")
@@ -59,17 +45,6 @@ public class ToDoController {
         return toDoService.update(ListId,todo);
     }
 
-    //Actualiza nombre de la lista
-    @PutMapping(path = "/list/{listId}")
-    public ListModel update(@RequestBody ListEntity list , @PathVariable("listId") Long ListId){
-        return toDoService.updateList(ListId,list);
-    }
-
-    //Eliminar lista
-    @DeleteMapping(value = "/list/{id}")
-    public void deleteList(@PathVariable("id")Long id){
-        toDoService.deleteList(id);
-    }
 
     //Elimina algun ToDo de acuerdo al id
     @CrossOrigin(origins = "http://localhost:3000")
