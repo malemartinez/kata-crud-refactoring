@@ -1,0 +1,35 @@
+.form-container{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.form-container input{
+  width: 70%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  
+  border: 1px dotted #ced4da;
+  border-radius: 5px;
+}
+.form-container input:focus-visible{
+  outline-color:#a0a3a7;
+}
+input::placeholder{
+  color: #ced4da;
+}
+
+.form-container button{
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8a89b;
+}
+.form-container button:hover{
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+.form-container button i{
+  color: #4a4a4a;
+}
+
+

@@ -1,0 +1,26 @@
+.inputList{
+  padding: 0.375rem 0.75rem;
+  border: 1px dotted #ced4da;
+  border-radius: 5px;
+
+}
+.inputList:focus-visible{
+  outline-color:#a0a3a7;
+}
+.formCreateList{
+  display: flex;
+}
+
+.formCreateList button{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8a89b;
+}
+.formCreateList button:hover{
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+.formCreateList button i{
+  color: #4a4a4a;
+  margin-right: 10px;
+}

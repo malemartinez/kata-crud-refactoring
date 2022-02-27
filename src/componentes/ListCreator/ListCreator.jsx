@@ -1,6 +1,8 @@
 import React , {useRef, useContext, useState } from 'react'
-import { ListStore } from './ListStore';
+import { ListStore } from '../utilidades/ListStore';
 import DataService from "../servicios/servicios-HTTP"
+
+import './ListCreator.css'
 
 
 const ListCreator = () => {
@@ -21,11 +23,12 @@ const ListCreator = () => {
 
     DataService.create(request)
     .then((response) => {
-      dispatch({ type: "add-item", item: response.data });
+      const data = response.data
+      dispatch({ type: "add-item", item: data });
       setState({ name: "" });
       formRef.current.reset();
       console.log("Lista creada")
-      console.log(state)
+      console.log(`respuesta del servidor ${item}`)
     });
 
   }
@@ -55,17 +58,26 @@ const ListCreator = () => {
   }
 
   return ( 
-    <div>
-      <form ref={formRef}>
-        <input 
-          type="text" 
-          name="name"
-          placeholder='Nombre de la lista'
-          defaultValue={item.name}
-          onChange={onchange}
-          />
-        {!item.id && <button onClick={onAdd}>Crear</button>}
-        {item.id && <button onClick={onEdit}>Actualizar</button>}
+    <div className='d-flex justify-content-center'>
+      <form ref={formRef} >
+        <div className = 'formCreateList'>
+          <input className='inputList'
+            type="text" 
+            name="name"
+            placeholder='Nombre de la lista'
+            defaultValue={item.name}
+            onChange={onchange}
+            />
+          {!item.id && <button onClick={onAdd}>
+            <i className="fa-solid fa-plus"></i>
+            Crear Nueva Lista
+          </button>}
+          {item.id && <button onClick={onEdit}>
+            <i className="fa-solid fa-pen-to-square"></i>
+          </button>}
+
+        </div>
+
         <hr />
       </form>
 

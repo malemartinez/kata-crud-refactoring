@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
-import  ListGroup  from "./componentes/ListGroup"
+import  ListGroup  from "./componentes/ListGroup/ListGroup"
+
+import './App.css'
 
 function App() {
   return (
-    <Fragment>
-      <h1>ToDo - App</h1>
+    <div>
+      <h1 className='d-flex justify-content-center titleApp'>ToDo - App</h1>
       <ListGroup/> 
-    </Fragment>
+    </div>
   )
   
 }

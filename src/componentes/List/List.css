@@ -1,0 +1,22 @@
+.d-flex p{
+  margin: 0;
+}
+.itemTodo{
+  padding: 10px;
+  border-bottom: 2px dotted #ced4dab6;
+  justify-content: space-between;
+}
+.itemTodoInfo{
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+.itemTodoInfo input{
+  margin-right: 15px;
+}
+/* .buttonsContainer{
+  min-width: 25px;
+} */
+.buttonsContainer button{
+  margin-left: 10px;
+}
