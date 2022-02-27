@@ -31,17 +31,22 @@ public class ToDoService {
 
 
     //guardar una lista nueva
-    public ResponseEntity<String> saveList(ListEntity list){
+    public ResponseEntity<ListModel> saveList(ListEntity list){
+        var listDTO = new ListModel();
         ListEntity list1 = new ListEntity();
         list1.setName(list.getName());
         listInterface.save(list1);
-
-        return new ResponseEntity<>("", HttpStatus.OK);
+        var arrayList = listInterface.findAll();
+        var index = arrayList.indexOf(list1);
+        var getList = arrayList.get(index);
+        listDTO = mapper.map(getList, ListModel.class);
+        return new ResponseEntity<ListModel>(listDTO, HttpStatus.OK);
     }
 
     //guardar ToDo dependiendo del id de la lista
-    public ResponseEntity<String> save(ToDoEntity todo , Long ListId) throws Exception {
+    public ResponseEntity<ToDoModel> save(ToDoEntity todo , Long ListId) throws Exception {
 
+        var todoDTO = new ToDoModel();
         if (todo.getName().isEmpty() || todo.getName().length() < 3) {
             throw new Exception("Entidad no válida para guardar");
         }
@@ -53,8 +58,11 @@ public class ToDoService {
         var list = listInterface.findById(ListId).get();
         list.getTodos().add(todo1);
         listInterface.save(list);
-
-        return new ResponseEntity<>("", HttpStatus.OK);
+        System.out.println(list);
+        var arraylist =  list.getTodos().toArray();
+        var getTodo = list.getTodos().get(arraylist.length - 1);
+        todoDTO = mapper.map(getTodo, ToDoModel.class);
+        return new ResponseEntity<ToDoModel>(todoDTO, HttpStatus.OK);
 
 
 
