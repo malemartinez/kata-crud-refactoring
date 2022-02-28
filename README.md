@@ -10,11 +10,17 @@ La solución del back se encuentra en la carpeta Backend-Todos y la solucion del
 Breve video explicando el codigo principal del backend hecho con spring boot
 
 
+https://user-images.githubusercontent.com/88175050/155907434-c6d250e7-814a-4283-bf72-a832ca36b7fe.mp4
 
 ![ExplicacionBack](https://user-images.githubusercontent.com/88175050/155906563-525703f1-17d5-4a89-8d7b-b67b5a2a5588.gif)
 
 ### Explicación del front
 Breve video explicando el codigo principal del frontend hecho con react.
+
+
+
+https://user-images.githubusercontent.com/88175050/155907450-7ad33658-7555-4619-b01e-a73179f333c6.mp4
+
 
 
 ![ExplicacionFront](https://user-images.githubusercontent.com/88175050/155906609-be38d06a-e76c-4f99-879c-f0ca7a592d41.gif)
