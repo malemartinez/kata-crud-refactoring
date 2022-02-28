@@ -4,18 +4,18 @@ La solución del back se encuentra en la rama main de este repositorio y la solu
 
 ## Demo del funcionamiento de la app
 
-![Diseño y funcionamiento de la app]( ./ToDoApp.mp4)
+![Diseño y funcionamiento de la app]( ./ToDoApp.gif)
 
 ### Explicación del back
 Breve video explicando el codigo principal del backend hecho con spring boot
 
-![Codigo backend]( ./Explicacion back.mp4)
+![Codigo backend]( ./Explicacionback.gif)
 
 
 ### Explicación del front
 Breve video explicando el codigo principal del frontend hecho con react.
 
-![Codigo frontend]( ./Explicacion front.mp4)
+![Codigo frontend]( ./Explicacionfront.gif)
 
 #### issues resueltos
 
