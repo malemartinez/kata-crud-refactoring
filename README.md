@@ -9,13 +9,13 @@ La solución del back se encuentra en la rama main de este repositorio y la solu
 ### Explicación del back
 Breve video explicando el codigo principal del backend hecho con spring boot
 
-![Codigo backend]( ./Explicacion back.gif)
+![Codigo backend]( ./ExplicacionBack.gif)
 
 
 ### Explicación del front
 Breve video explicando el codigo principal del frontend hecho con react.
 
-![Codigo frontend]( ./Explicacion front.gif)
+![Codigo frontend]( ./ExplicacionFront.gif)
 
 #### issues resueltos
 
