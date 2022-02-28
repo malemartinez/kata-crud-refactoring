@@ -1,5 +1,5 @@
 # Solución
-La solución del back se encuentra en la rama main de este repositorio y la solucion del front se encuentra en la rama front.
+La solución del back se encuentra en la carpeta Backend-Todos y la solucion del front se encuentra en la rama front.
 
 
 ## Demo del funcionamiento de la app
@@ -9,13 +9,16 @@ La solución del back se encuentra en la rama main de este repositorio y la solu
 ### Explicación del back
 Breve video explicando el codigo principal del backend hecho con spring boot
 
-![]( ./ExplicacionBack.gif)
 
+
+![ExplicacionBack](https://user-images.githubusercontent.com/88175050/155906563-525703f1-17d5-4a89-8d7b-b67b5a2a5588.gif)
 
 ### Explicación del front
 Breve video explicando el codigo principal del frontend hecho con react.
 
-![]( ./ExplicacionFront.gif)
+
+![ExplicacionFront](https://user-images.githubusercontent.com/88175050/155906609-be38d06a-e76c-4f99-879c-f0ca7a592d41.gif)
+
 
 #### issues resueltos
 
